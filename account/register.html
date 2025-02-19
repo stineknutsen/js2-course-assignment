@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta type="description" content="Register" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js" type="module" defer></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <a href="../index.html"
+            ><img
+              class="logo"
+              id="logo"
+              src="../assets/images/1.png"
+              alt="Logo"
+          /></a>
+        </div>
+        <div>
+          <a href="/account/register.html">Register </a>
+          <p>|</p>
+          <a href="/account/login.html">Sign In</a>
+          <button id="theme-toggle">Toggle Theme</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="form">
+        <div>
+          <h1>Register account</h1>
+          <p>Register an account to create and manage posts</p>
+        </div>
+        <form class="register" id="register-form" method="post">
+          <label for="name">Username</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            minlength="2"
+            placeholder="Username"
+            required
+          />
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email address @stud.noroff.no"
+            required
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            minlength="8"
+            placeholder="Password (min 8 characters)"
+            required
+          />
+
+          <input type="submit" value="Register" class="btn" />
+        </form>
+        <div class="switch">
+          <p>Already have an account?</p>
+          <a href="/account/login.html">Sign In</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Stine Knutsen</p>
+    </footer>
+  </body>
+</html>

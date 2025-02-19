@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta type="description" content="Login" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js" type="module" defer></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <a href="../index.html"
+            ><img
+              class="logo"
+              id="logo"
+              src="../assets/images/1.png"
+              alt="Logo"
+          /></a>
+        </div>
+        <div>
+          <a href="/account/register.html">Register </a>
+          <p>|</p>
+          <a href="/account/login.html">Sign In</a>
+          <button id="theme-toggle">Toggle Theme</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="form">
+        <div>
+          <h1>Sign In</h1>
+          <p>Sign in to create and manage posts</p>
+        </div>
+        <form class="login" id="login-form" method="post">
+          <label for="email">Email address:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email address"
+            required
+          />
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            minlength="8"
+            placeholder="Enter your password"
+            required
+          />
+          <input type="submit" value="Sign In" class="btn" />
+        </form>
+        <div class="switch">
+          <p>Don't have an account?</p>
+          <a href="/account/register.html">Create account</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Stine Knutsen</p>
+    </footer>
+  </body>
+</html>

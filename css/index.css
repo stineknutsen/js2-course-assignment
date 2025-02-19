@@ -1,0 +1,44 @@
+.frontpage-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.frontpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.frontpage-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .frontpage-image {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .frontpage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .frontpage-section {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .frontpage-image {
+    max-width: 100%;
+  }
+}
