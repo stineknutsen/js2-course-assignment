@@ -1,9 +1,8 @@
 import { toggleTheme } from "./ui/theme.js";
+import { registerHandler } from "./handlers/auth/registerHandler.js";
 
 function router() {
   const pathname = window.location.pathname;
-
-  console.log(pathname);
 
   switch (pathname) {
     case "/":
@@ -11,7 +10,7 @@ function router() {
       // displayPosts();
       break;
     case "/account/register.html":
-      // registerHandler();
+      registerHandler();
       break;
     case "/account/login.html":
       // loginHandler();
