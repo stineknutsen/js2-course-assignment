@@ -1,19 +1,20 @@
 import { toggleTheme } from "./ui/theme.js";
 import { registerHandler } from "./handlers/auth/registerHandler.js";
-
+import { loginHandler } from "./handlers/auth/loginHandler.js";
+import { updateHeader } from "./ui/updateHeader.js";
 function router() {
   const pathname = window.location.pathname;
 
   switch (pathname) {
     case "/":
     case "/index.html":
-      // displayPosts();
+      // displayFeed();
       break;
     case "/account/register.html":
       registerHandler();
       break;
     case "/account/login.html":
-      // loginHandler();
+      loginHandler();
       break;
     case "/account/profile.html":
       // displayProfile();
@@ -32,3 +33,4 @@ function router() {
 
 router();
 toggleTheme();
+updateHeader();

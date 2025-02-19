@@ -14,8 +14,6 @@ async function submitRegisterForm(event) {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
 
-  console.log(data);
-
   try {
     const response = await registerUser(data);
     alert("Registration successful!");
