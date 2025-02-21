@@ -1,5 +1,5 @@
 import { getToken } from "../../utils/localStorage.js";
-import { NOROFF_API_KEY, POSTS_URL } from "../../constants/api.js";
+import { NOROFF_API_KEY, POSTS_URL, TAG } from "../../constants/api.js";
 
 export async function createPost(post) {
   try {
@@ -19,7 +19,8 @@ export async function createPost(post) {
       body: JSON.stringify(post),
     };
 
-    const response = await fetch(POSTS_URL, options);
+    const TAG_URL = `${POSTS_URL}?_tag=${TAG}`;
+    const response = await fetch(TAG_URL, options);
     const json = await response.json();
     return json.data;
   } catch (error) {
