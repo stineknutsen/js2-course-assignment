@@ -1,4 +1,4 @@
-import { NOROFF_API_KEY, POSTS_URL } from "../../constants/api.js";
+import { NOROFF_API_KEY, TAG_URL } from "../../constants/api.js";
 import { getToken } from "../../utils/localStorage.js";
 export async function fetchPosts() {
   try {
@@ -16,7 +16,7 @@ export async function fetchPosts() {
       },
     };
 
-    const response = await fetch(POSTS_URL, options);
+    const response = await fetch(TAG_URL, options);
     const json = await response.json();
     return json.data;
   } catch (error) {

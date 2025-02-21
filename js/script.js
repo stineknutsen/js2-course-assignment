@@ -5,6 +5,7 @@ import { updateHeader } from "./ui/updateHeader.js";
 import { displayFeedPosts } from "./handlers/posts/displayFeedPosts.js";
 import { displayProfilePosts } from "./handlers/posts/displayProfilePosts.js";
 import { createPostHandler } from "./handlers/posts/createPostHandler.js";
+import { displaySinglePost } from "./handlers/posts/displaySinglePost.js";
 function router() {
   const pathname = window.location.pathname;
 
@@ -25,7 +26,7 @@ function router() {
       break;
     case "/post/":
     case "/post/index.html":
-      // displayPost();
+      displaySinglePost();
       break;
     case "/post/create.html":
       // createPostHandler();

@@ -19,7 +19,8 @@ export function renderFeedPosts(container, posts) {
   container.innerHTML = "";
 
   posts.forEach((post) => {
-    const postElement = document.createElement("div");
+    const postElement = document.createElement("a");
+    postElement.href = `./post/index.html?id=${post.id}`;
     postElement.classList.add("post");
 
     const title = post.title;
