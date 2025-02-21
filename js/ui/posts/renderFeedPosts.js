@@ -6,6 +6,8 @@ export function renderFeedPosts(container, posts) {
   if (userLoggedIn) {
     const oldContainer = document.getElementById("frontpage");
     oldContainer.innerHTML = "";
+    const createPost = document.getElementById("create-post");
+    createPost.style.display = "block";
   }
 
   if (!posts || posts.length === 0) {

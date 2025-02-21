@@ -4,12 +4,14 @@ import { loginHandler } from "./handlers/auth/loginHandler.js";
 import { updateHeader } from "./ui/updateHeader.js";
 import { displayFeedPosts } from "./handlers/posts/displayFeedPosts.js";
 import { displayProfilePosts } from "./handlers/posts/displayProfilePosts.js";
+import { createPostHandler } from "./handlers/posts/createPostHandler.js";
 function router() {
   const pathname = window.location.pathname;
 
   switch (pathname) {
     case "/":
     case "/index.html":
+      createPostHandler();
       displayFeedPosts();
       break;
     case "/account/register.html":
