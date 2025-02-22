@@ -47,9 +47,26 @@
       </nav>
     </header>
     <main>
-      <section>
+      <section class="form">
         <h1>Edit Post</h1>
-        <button class="btn">.</button>
+        <form class="form" method="post">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" required />
+          <label for="content">Content</label>
+          <textarea
+            id="content"
+            maxlength="100000"
+            rows="10"
+            required
+          ></textarea>
+          <input
+            type="submit"
+            id="update-button"
+            value="Update Post"
+            class="btn"
+          />
+        </form>
+        <button class="btn btn-secondary" id="delete-button">Delete</button>
       </section>
     </main>
     <footer>

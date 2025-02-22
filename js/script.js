@@ -6,6 +6,8 @@ import { displayFeedPosts } from "./handlers/posts/displayFeedPosts.js";
 import { displayProfilePosts } from "./handlers/posts/displayProfilePosts.js";
 import { createPostHandler } from "./handlers/posts/createPostHandler.js";
 import { displaySinglePost } from "./handlers/posts/displaySinglePost.js";
+import { editPostHandler } from "./handlers/posts/editPostHandler.js";
+
 function router() {
   const pathname = window.location.pathname;
 
@@ -32,7 +34,7 @@ function router() {
       // createPostHandler();
       break;
     case "/post/edit.html":
-    // editPostHandler();
+      editPostHandler();
   }
 }
 
