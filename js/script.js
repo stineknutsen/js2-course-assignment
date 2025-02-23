@@ -20,25 +20,31 @@ function router() {
       displayFeed();
       break;
     case "/account/register.html":
+    case "/account/register":
       registerHandler();
       break;
     case "/account/login.html":
+    case "/account/login":
       loginHandler();
       break;
     case "/account/profile.html":
+    case "/account/profile":
       updateHeader();
       displayProfilePosts();
       break;
     case "/post/":
     case "/post/index.html":
+    case "/post/index":
       updateHeader();
       displaySinglePost();
       break;
     case "/post/edit.html":
+    case "/post/edit":
       updateHeader();
       editPostHandler();
       break;
     case "/account/user-profile.html":
+    case "/account/user-profile":
       updateHeader();
       displayUserProfile();
       break;
