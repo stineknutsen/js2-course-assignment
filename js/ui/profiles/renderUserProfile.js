@@ -1,3 +1,5 @@
+import { followButtonHandler } from "../../handlers/profiles/followButtonHandler.js";
+
 export async function renderUserProfile(container, posts) {
   const urlParams = new URLSearchParams(window.location.search);
   const profileUsername = urlParams.get("name");
@@ -8,7 +10,13 @@ export async function renderUserProfile(container, posts) {
   const username = document.createElement("h1");
   username.textContent = "Profile of: " + profileUsername;
 
-  headerContainer.append(username);
+  const button = document.createElement("button");
+  button.id = "follow-button";
+  button.textContent = "Follow";
+  button.dataset.username = profileUsername;
+  button.dataset.following = "false";
+
+  headerContainer.append(username, button);
 
   profilePostsContainer.textContent = "Posts: ";
 
@@ -33,4 +41,6 @@ export async function renderUserProfile(container, posts) {
   console.log("hello, great success");
 
   container.append(headerContainer, profilePostsContainer);
+
+  button.addEventListener("click", followButtonHandler);
 }
