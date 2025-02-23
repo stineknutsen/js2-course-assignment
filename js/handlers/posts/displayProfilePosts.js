@@ -1,7 +1,10 @@
-import { fetchUserPosts } from "../../api/posts/fetchUserPosts.js";
+import { fetchLoggedInUserPosts } from "../../api/posts/fetchLoggedInUserPosts.js";
 import { renderProfilePosts } from "../../ui/posts/renderProfilePosts.js";
 import { getUsername } from "../../utils/localStorage.js";
-import { deleteButtonClick, editButtonClick } from "./buttonClicks.js";
+import {
+  deleteButtonClick,
+  editButtonClick,
+} from "../../utils/buttonClicks.js";
 export async function displayProfilePosts() {
   const userLoggedIn = getUsername();
 
@@ -11,7 +14,7 @@ export async function displayProfilePosts() {
   }
 
   try {
-    const posts = await fetchUserPosts();
+    const posts = await fetchLoggedInUserPosts();
     const container = document.getElementById("posts-container");
 
     renderProfilePosts(container, posts);

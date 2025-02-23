@@ -18,6 +18,11 @@ export function renderSinglePost(container, post) {
   const bodyElement = document.createElement("p");
   bodyElement.textContent = body;
 
+  const author = post.tags[1];
+  const authorElement = document.createElement("a");
+  authorElement.href = `../account/user-profile.html?name=${author}`;
+  authorElement.textContent = "Author: " + author;
+
   container.append(postElement);
-  postElement.append(titleElement, bodyElement);
+  postElement.append(titleElement, bodyElement, authorElement);
 }

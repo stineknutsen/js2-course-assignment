@@ -1,4 +1,4 @@
-import { deletePost } from "../../api/posts/deletePost.js";
+import { deletePost } from "../api/posts/deletePost.js";
 
 export function editButtonClick() {
   document.querySelectorAll(".edit-button").forEach((button) => {

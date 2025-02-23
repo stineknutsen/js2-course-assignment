@@ -1,7 +1,7 @@
 import { getToken } from "../../utils/localStorage.js";
 import { NOROFF_API_KEY, PROFILES_URL } from "../../constants/api.js";
 
-export async function fetchUserPosts(username) {
+export async function fetchProfile(username) {
   try {
     const token = getToken();
 
@@ -17,8 +17,8 @@ export async function fetchUserPosts(username) {
       },
     };
 
-    const USER_URL = `${PROFILES_URL}/${username}/posts`;
-    const response = await fetch(USER_URL, options);
+    const PROFILE_URL = `${PROFILES_URL}/${username}`;
+    const response = await fetch(PROFILE_URL, options);
     const json = await response.json();
     return json.data;
   } catch (error) {

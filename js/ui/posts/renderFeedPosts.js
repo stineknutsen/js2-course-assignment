@@ -29,7 +29,11 @@ export function renderFeedPosts(container, posts) {
     const bodyElement = document.createElement("p");
     bodyElement.textContent = body;
 
+    const author = post.tags[1];
+    const authorElement = document.createElement("p");
+    authorElement.textContent = "Author: " + author;
+
     container.append(postElement);
-    postElement.append(titleElement, bodyElement);
+    postElement.append(titleElement, bodyElement, authorElement);
   });
 }

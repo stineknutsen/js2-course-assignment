@@ -1,7 +1,10 @@
-import { getToken } from "../../utils/localStorage.js";
-import { NOROFF_API_KEY, PROFILES_URL } from "../../constants/api.js";
+/*
 
-export async function fetchUserPosts(username) {
+import { PROFILES_URL, NOROFF_API_KEY } from "../../constants/api.js";
+import { getToken } from "../../utils/localStorage.js";
+
+
+export async function fetchUsers() {
   try {
     const token = getToken();
 
@@ -17,12 +20,15 @@ export async function fetchUserPosts(username) {
       },
     };
 
-    const USER_URL = `${PROFILES_URL}/${username}/posts`;
-    const response = await fetch(USER_URL, options);
+    const response = await fetch(PROFILES_URL, options);
+    if (!response.ok) {
+      throw new Error("Failed to fetch profiles.");
+    }
     const json = await response.json();
     return json.data;
   } catch (error) {
-    console.error("Error fetching posts", error);
+    console.error(error.message);
     throw error;
   }
 }
+*/

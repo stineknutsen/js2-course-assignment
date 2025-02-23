@@ -1,5 +1,6 @@
 import { createPost } from "../../api/posts/createPost.js";
 import { TAG } from "../../constants/api.js";
+import { getUsername } from "../../utils/localStorage.js";
 
 export function createPostHandler() {
   const form = document.getElementById("create-post-form");
@@ -16,7 +17,8 @@ async function submitCreatePostForm(event) {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
 
-  data.tags = [TAG];
+  const username = getUsername();
+  data.tags = [TAG, username];
 
   try {
     await createPost(data);

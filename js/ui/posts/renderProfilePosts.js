@@ -1,5 +1,3 @@
-import { getUsername } from "../../utils/localStorage.js";
-
 export function renderProfilePosts(container, posts) {
   if (!posts || posts.length === 0) {
     console.log("No posts found");
