@@ -3,6 +3,8 @@ import { NOROFF_API_KEY, TAG_URL } from "../../constants/api.js";
 
 export async function createPost(post) {
   try {
+    showLoader("loader");
+
     const token = getToken();
 
     if (!token) {
@@ -25,5 +27,7 @@ export async function createPost(post) {
   } catch (error) {
     console.error("Error fetching posts", error);
     throw error;
+  } finally {
+    hideLoader("loader");
   }
 }

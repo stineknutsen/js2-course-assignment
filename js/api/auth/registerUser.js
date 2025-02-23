@@ -1,7 +1,10 @@
 import { AUTH_REGISTER_URL } from "../../constants/api.js";
+import { showLoader, hideLoader } from "../../utils/loader.js";
 
 export async function registerUser(userData) {
   try {
+    showLoader("loader");
+
     const options = {
       method: "POST",
       headers: {
@@ -20,5 +23,7 @@ export async function registerUser(userData) {
   } catch (error) {
     console.error("Error registering user", error);
     throw error;
+  } finally {
+    hideLoader("loader");
   }
 }

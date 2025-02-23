@@ -1,5 +1,6 @@
 import { POSTS_URL, NOROFF_API_KEY } from "../../constants/api.js";
 import { getToken } from "../../utils/localStorage.js";
+import { showLoader, hideLoader } from "../../utils/loader.js";
 
 export async function deletePost(postId) {
   const token = getToken();
@@ -9,6 +10,8 @@ export async function deletePost(postId) {
   }
 
   try {
+    showLoader("loader");
+
     const POST_ID_URL = `${POSTS_URL}/${postId}`;
     const options = {
       method: "DELETE",
@@ -29,5 +32,7 @@ export async function deletePost(postId) {
   } catch (error) {
     console.error(error);
     alert(error.message);
+  } finally {
+    hideLoader("loader");
   }
 }

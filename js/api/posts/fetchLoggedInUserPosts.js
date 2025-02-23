@@ -1,7 +1,10 @@
 import { NOROFF_API_KEY, PROFILES_URL } from "../../constants/api.js";
 import { getToken, getUsername } from "../../utils/localStorage.js";
+import { showLoader, hideLoader } from "../../utils/loader.js";
 export async function fetchLoggedInUserPosts() {
   try {
+    showLoader("loader");
+
     const token = getToken();
     const name = getUsername();
 
@@ -24,5 +27,7 @@ export async function fetchLoggedInUserPosts() {
   } catch (error) {
     console.error("Error fetching posts", error);
     throw error;
+  } finally {
+    hideLoader("loader");
   }
 }

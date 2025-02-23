@@ -1,8 +1,11 @@
 import { PROFILES_URL, NOROFF_API_KEY } from "../../constants/api.js";
 import { getToken } from "../../utils/localStorage.js";
+import { showLoader, hideLoader } from "../../utils/loader.js";
 
 export async function unfollowUser(username) {
   try {
+    showLoader("loader");
+
     const token = getToken();
 
     if (!token) {
@@ -24,5 +27,7 @@ export async function unfollowUser(username) {
   } catch (error) {
     console.error("Error unfollowing user", error);
     throw error;
+  } finally {
+    hideLoader("loader");
   }
 }

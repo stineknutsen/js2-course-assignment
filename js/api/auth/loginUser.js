@@ -1,7 +1,9 @@
 import { AUTH_LOGIN_URL } from "../../constants/api.js";
+import { showLoader, hideLoader } from "../../utils/loader.js";
 
 export async function loginUser(userData) {
   try {
+    showLoader("loader");
     const options = {
       method: "POST",
       headers: {
@@ -20,5 +22,7 @@ export async function loginUser(userData) {
   } catch (error) {
     console.error("Error registering user", error);
     throw error;
+  } finally {
+    hideLoader("loader");
   }
 }
