@@ -1,4 +1,4 @@
-import { toggleTheme } from "./ui/theme.js";
+import { initialiseTheme } from "./ui/theme.js";
 import { registerHandler } from "./handlers/auth/registerHandler.js";
 import { loginHandler } from "./handlers/auth/loginHandler.js";
 import { updateHeader } from "./ui/updateHeader.js";
@@ -43,4 +43,4 @@ function router() {
 
 router();
 updateHeader();
-toggleTheme();
+initialiseTheme();

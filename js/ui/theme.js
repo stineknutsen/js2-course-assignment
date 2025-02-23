@@ -11,12 +11,18 @@ export function toggleTheme() {
     newTheme === "dark" ? "../assets/images/3.png" : "../assets/images/1.png";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+export function initialiseTheme() {
   const savedTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", savedTheme);
 
-  document.getElementById("logo").src =
+  const logo = document.getElementById("logo");
+  logo.src =
     savedTheme === "dark" ? "../assets/images/3.png" : "../assets/images/1.png";
-});
 
-document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", toggleTheme);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", initialiseTheme);
