@@ -4,7 +4,7 @@
 
 ## Description
 
-This assignment asked to build a functional social media platform for a fictional client. I made up a client called thebooks, and made them a platform for readers and authors to connect and share reading and writing experiences.
+This assignment asked to build a functional social media platform for a fictional client. I made up a client called thebooks, and made them a platform aimed at readers and authors, where they can connect and share reading and writing experiences.
 
 ## Pages
 
@@ -32,8 +32,8 @@ This assignment asked to build a functional social media platform for a fictiona
 
 - HTML: structure
 - CSS: basic layout, styling and responsiveness
-- JavaScript:
-- Noroff API:
+- JavaScript: functionality and content
+- Noroff API
 
 ## Running the project
 
