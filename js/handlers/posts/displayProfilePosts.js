@@ -5,23 +5,30 @@ import {
   deleteButtonClick,
   editButtonClick,
 } from "../../utils/buttonClicks.js";
+import { showLoader, hideLoader } from "../../utils/loader.js";
 export async function displayProfilePosts() {
-  const userLoggedIn = getUsername();
-
-  if (userLoggedIn) {
-    const profile = document.getElementById("profile");
-    profile.textContent = "Hello, " + userLoggedIn + "!";
-  }
+  showLoader("loader");
 
   try {
+    const userLoggedIn = getUsername();
+
+    if (userLoggedIn) {
+      const profile = document.getElementById("profile");
+      profile.textContent = "Hello, " + userLoggedIn + "!";
+    }
     const posts = await fetchLoggedInUserPosts();
+    if (!posts || posts.length === 0) {
+      alert("No posts found");
+      return;
+    }
     const container = document.getElementById("posts-container");
 
     renderProfilePosts(container, posts);
     editButtonClick();
     deleteButtonClick();
   } catch (error) {
-    console.error("Error displaying posts", error);
-    throw error;
+    alert("Error: Something went wrong during profile display");
+  } finally {
+    hideLoader("loader");
   }
 }

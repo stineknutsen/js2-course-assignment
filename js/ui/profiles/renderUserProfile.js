@@ -37,9 +37,6 @@ export async function renderUserProfile(container, posts) {
     postElement.append(titleElement, bodyElement);
   });
 
-  console.log(profileUsername);
-  console.log("hello, great success");
-
   container.append(headerContainer, profilePostsContainer);
 
   button.addEventListener("click", followButtonHandler);

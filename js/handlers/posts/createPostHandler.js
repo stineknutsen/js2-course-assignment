@@ -1,12 +1,21 @@
 import { createPost } from "../../api/posts/createPost.js";
 import { TAG } from "../../constants/api.js";
+import { showLoader, hideLoader } from "../../utils/loader.js";
 import { getUsername } from "../../utils/localStorage.js";
 
 export function createPostHandler() {
-  const form = document.getElementById("create-post-form");
+  showLoader("loader");
+  try {
+    const form = document.getElementById("create-post-form");
 
-  if (form) {
+    if (!form) {
+      alert("Form not found");
+    }
     form.addEventListener("submit", submitCreatePostForm);
+  } catch (error) {
+    alert("Error: Something went wrong during post creation");
+  } finally {
+    hideLoader("loader");
   }
 }
 

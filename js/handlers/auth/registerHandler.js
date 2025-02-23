@@ -1,12 +1,25 @@
 import { registerUser } from "../../api/auth/registerUser.js";
+import { showLoader, hideLoader } from "../../utils/loader.js";
 
 export function registerHandler() {
   const registerForm = document.querySelector("#register-form");
 
   if (registerForm) {
-    registerForm.addEventListener("submit", submitRegisterForm);
+    registerForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      showLoader("loader");
+
+      try {
+        await submitRegisterForm(event);
+      } catch (error) {
+        alert(`Error: Something went wrong during registration`);
+      } finally {
+        hideLoader("loader");
+      }
+    });
   }
 }
+
 async function submitRegisterForm(event) {
   event.preventDefault();
 
@@ -15,10 +28,8 @@ async function submitRegisterForm(event) {
   const data = Object.fromEntries(formData);
 
   try {
-    const response = await registerUser(data);
+    await registerUser(data);
     alert("Registration successful!");
-    console.log("User registeres", response);
-
     location.href = "/account/login.html";
   } catch (error) {
     alert(`Error: Something went wrong during registration`);

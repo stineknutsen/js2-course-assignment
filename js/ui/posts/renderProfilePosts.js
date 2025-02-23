@@ -1,6 +1,5 @@
 export function renderProfilePosts(container, posts) {
   if (!posts || posts.length === 0) {
-    console.log("No posts found");
     container.innerHTML = "<p>No posts to display</p>";
     return;
   }

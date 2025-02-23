@@ -25,7 +25,7 @@ export function updateHeader() {
         }
       });
     } else {
-      console.log("Log in to see displayed posts");
+      alert("Log in to see displayed posts");
     }
   });
 }

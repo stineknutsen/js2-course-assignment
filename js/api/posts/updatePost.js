@@ -1,11 +1,9 @@
 import { POSTS_URL, NOROFF_API_KEY } from "../../constants/api.js";
 import { getToken } from "../../utils/localStorage.js";
 import { getPostIdFromUrl } from "../../utils/getPostIdFromUrl.js";
-import { showLoader, hideLoader } from "../../utils/loader.js";
 
 export async function updatePost(postId, updatedData) {
   try {
-    showLoader("loader");
     postId = getPostIdFromUrl();
     const token = getToken();
 
@@ -33,9 +31,7 @@ export async function updatePost(postId, updatedData) {
     alert("Post updated successfully!");
     return response.json();
   } catch (error) {
-    console.error(error);
-    alert(error.message);
+    alert("Error: Something went wrong during post update");
   } finally {
-    hideLoader("loader");
   }
 }

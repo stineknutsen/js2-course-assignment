@@ -1,13 +1,11 @@
 import { POSTS_URL, NOROFF_API_KEY } from "../../constants/api.js";
 import { getPostIdFromUrl } from "../../utils/getPostIdFromUrl.js";
-import { showLoader, hideLoader } from "../../utils/loader.js";
 import { getToken } from "../../utils/localStorage.js";
 
 export async function fetchSinglePost(postId) {
   postId = getPostIdFromUrl();
 
   try {
-    showLoader("loader");
     const token = getToken();
 
     if (!token) {
@@ -33,6 +31,5 @@ export async function fetchSinglePost(postId) {
   } catch (error) {
     throw new Error("Failed to fetch post");
   } finally {
-    hideLoader("loader");
   }
 }

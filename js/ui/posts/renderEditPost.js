@@ -18,7 +18,6 @@ export async function renderEditPost() {
       document.getElementById("content").value = post.body;
     }
   } catch (error) {
-    console.error(error);
-    console.error("Error displaying post", error);
+    alert("Error displaying post");
   }
 }
