@@ -26,21 +26,24 @@ function router() {
       loginHandler();
       break;
     case "/account/profile.html":
+      updateHeader();
       displayProfilePosts();
       break;
     case "/post/":
     case "/post/index.html":
+      updateHeader();
       displaySinglePost();
       break;
     case "/post/edit.html":
+      updateHeader();
       editPostHandler();
       break;
     case "/account/user-profile.html":
+      updateHeader();
       displayUserProfile();
       break;
   }
 }
 
 router();
-updateHeader();
 initialiseTheme();
