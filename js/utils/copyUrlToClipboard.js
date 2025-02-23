@@ -1,4 +1,10 @@
-export function copyCurrentUrlToClipboard() {
+/**
+ * Copies the current page URL to the clipboard.
+ * Displays a success or error message depending on the outcome.
+ *
+ * @function
+ */
+export function copyUrlToClipboard() {
   const url = window.location.href;
 
   navigator.clipboard
