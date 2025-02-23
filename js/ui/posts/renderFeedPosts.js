@@ -4,8 +4,6 @@ export function renderFeedPosts(container, posts) {
   const userLoggedIn = getToken();
 
   if (userLoggedIn) {
-    const oldContainer = document.getElementById("frontpage");
-    oldContainer.innerHTML = "";
     const createPost = document.getElementById("create-post");
     createPost.style.display = "block";
   }

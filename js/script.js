@@ -2,7 +2,7 @@ import { toggleTheme } from "./ui/theme.js";
 import { registerHandler } from "./handlers/auth/registerHandler.js";
 import { loginHandler } from "./handlers/auth/loginHandler.js";
 import { updateHeader } from "./ui/updateHeader.js";
-import { displayFeedPosts } from "./handlers/posts/displayFeedPosts.js";
+import { displayFeed } from "./handlers/posts/displayFeed.js";
 import { displayProfilePosts } from "./handlers/posts/displayProfilePosts.js";
 import { createPostHandler } from "./handlers/posts/createPostHandler.js";
 import { displaySinglePost } from "./handlers/posts/displaySinglePost.js";
@@ -15,7 +15,7 @@ function router() {
     case "/":
     case "/index.html":
       createPostHandler();
-      displayFeedPosts();
+      displayFeed();
       break;
     case "/account/register.html":
       registerHandler();
