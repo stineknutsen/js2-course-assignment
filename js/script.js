@@ -15,6 +15,7 @@ function router() {
   switch (pathname) {
     case "/":
     case "/index.html":
+    case "/index":
       createPostHandler();
       displayFeed();
       break;
@@ -37,9 +38,6 @@ function router() {
     case "/account/user-profile.html":
       displayUserProfile();
       break;
-    //case "/account/users.html":
-    //displayUsers();
-    //break;
   }
 }
 

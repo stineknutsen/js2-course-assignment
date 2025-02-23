@@ -1,7 +1,7 @@
 import { getPostIdFromUrl } from "../../utils/getPostIdFromUrl.js";
 import { fetchSinglePost } from "../../api/posts/fetchSinglePost.js";
 import { renderSinglePost } from "../../ui/posts/renderSinglePost.js";
-import { copyCurrentUrlToClipboard } from "../../utils/copyUrlToClipboard.js";
+import { copyUrlToClipboard } from "../../utils/copyUrlToClipboard.js";
 
 export async function displaySinglePost() {
   const postId = getPostIdFromUrl();
@@ -17,7 +17,7 @@ export async function displaySinglePost() {
     renderSinglePost(container, post);
     const shareButton = document.getElementById("share-button");
     if (shareButton) {
-      shareButton.addEventListener("click", copyCurrentUrlToClipboard);
+      shareButton.addEventListener("click", copyUrlToClipboard);
     }
   } catch (error) {
     console.error("Error displaying post", error);
