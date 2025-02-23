@@ -30,11 +30,11 @@ function router() {
     case "/post/index.html":
       displaySinglePost();
       break;
-    case "/post/create.html":
-      // createPostHandler();
-      break;
     case "/post/edit.html":
       editPostHandler();
+      break;
+    case "/post/user.html":
+    // displayUserPosts();
   }
 }
 

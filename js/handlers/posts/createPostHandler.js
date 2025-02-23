@@ -3,7 +3,6 @@ import { TAG } from "../../constants/api.js";
 
 export function createPostHandler() {
   const form = document.getElementById("create-post-form");
-  console.log(form);
 
   if (form) {
     form.addEventListener("submit", submitCreatePostForm);
