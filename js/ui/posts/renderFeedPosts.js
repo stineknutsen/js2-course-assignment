@@ -8,6 +8,9 @@ export function renderFeedPosts(container, posts) {
     createPost.style.display = "block";
   }
 
+  const searcPosts = document.getElementById("search-container");
+  searcPosts.style.display = "block";
+
   if (!posts || posts.length === 0) {
     console.log("No posts found");
     container.innerHTML = "<p>No posts to display</p>";

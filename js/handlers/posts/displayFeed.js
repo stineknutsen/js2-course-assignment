@@ -1,6 +1,7 @@
 import { fetchPosts } from "../../api/posts/fetchPosts.js";
 import { renderFeedPosts } from "../../ui/posts/renderFeedPosts.js";
 import { getToken } from "../../utils/localStorage.js";
+import { searchPostsHandler } from "./searchPostsHandler.js";
 
 export async function displayFeed() {
   const userLoggedIn = getToken();
@@ -14,6 +15,7 @@ export async function displayFeed() {
       const container = document.getElementById("posts-container");
 
       renderFeedPosts(container, posts);
+      searchPostsHandler(posts);
     } catch (error) {
       console.error("Error displaying posts", error);
       throw error;

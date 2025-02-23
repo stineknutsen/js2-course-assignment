@@ -24,6 +24,10 @@
   display: none;
 }
 
+.search-container {
+  display: none;
+}
+
 @media screen and (min-width: 600px) {
   .frontpage-image {
     max-width: 90%;
