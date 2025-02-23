@@ -11,3 +11,13 @@
   gap: 0.5rem;
   max-width: 400px;
 }
+
+.create {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: var(--background);
+  box-shadow: 0 0 10px var(--primary);
+}

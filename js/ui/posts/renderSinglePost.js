@@ -21,6 +21,7 @@ export function renderSinglePost(container, post) {
   const authorElement = document.createElement("a");
   authorElement.href = `../account/user-profile.html?name=${author}`;
   authorElement.textContent = "Author: " + author;
+  authorElement.classList.add("author-link");
 
   container.append(postElement);
   postElement.append(titleElement, bodyElement, authorElement);

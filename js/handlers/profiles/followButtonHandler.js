@@ -17,11 +17,13 @@ export async function followButtonHandler(event) {
 
       button.textContent = "Unfollow";
       button.dataset.following = "true";
+      button.classList.add("btn-secondary");
     } else {
       await unfollowUser(username);
 
       button.textContent = "Follow";
       button.dataset.following = "false";
+      button.classList.remove("btn-secondary");
     }
   } catch (error) {
     throw error;

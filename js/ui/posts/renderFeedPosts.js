@@ -19,9 +19,12 @@ export function renderFeedPosts(container, posts) {
   container.innerHTML = "";
 
   posts.forEach((post) => {
-    const postElement = document.createElement("a");
-    postElement.href = `./post/index.html?id=${post.id}`;
+    const postLink = document.createElement("a");
+    postLink.href = `./post/index.html?id=${post.id}`;
+
+    const postElement = document.createElement("div");
     postElement.classList.add("post");
+    postElement.classList.add("post-link");
 
     const title = post.title;
     const titleElement = document.createElement("h2");
@@ -35,7 +38,8 @@ export function renderFeedPosts(container, posts) {
     const authorElement = document.createElement("p");
     authorElement.textContent = "Author: " + author;
 
-    container.append(postElement);
+    container.append(postLink);
+    postLink.append(postElement);
     postElement.append(titleElement, bodyElement, authorElement);
   });
 }

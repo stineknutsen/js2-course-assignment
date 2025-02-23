@@ -4,7 +4,7 @@ export function renderProfilePosts(container, posts) {
     return;
   }
 
-  container.innerHTML = "";
+  container.innerHTML = "Your posts:";
 
   posts.forEach((post) => {
     const postElement = document.createElement("div");
@@ -23,11 +23,13 @@ export function renderProfilePosts(container, posts) {
 
     const editButton = document.createElement("button");
     editButton.classList.add("edit-button");
+    editButton.classList.add("btn");
     editButton.textContent = "Edit";
     editButton.dataset.id = post.id;
 
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
+    deleteButton.classList.add("btn-secondary");
     deleteButton.textContent = "Delete";
     deleteButton.dataset.id = post.id;
 

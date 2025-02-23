@@ -8,10 +8,11 @@ export async function renderUserProfile(container, posts) {
   const profilePostsContainer = document.createElement("div");
 
   const username = document.createElement("h1");
-  username.textContent = "Profile of: " + profileUsername;
+  username.textContent = profileUsername + "'s Profile";
 
   const button = document.createElement("button");
   button.id = "follow-button";
+  button.classList.add("btn");
   button.textContent = "Follow";
   button.dataset.username = profileUsername;
   button.dataset.following = "false";
@@ -21,9 +22,12 @@ export async function renderUserProfile(container, posts) {
   profilePostsContainer.textContent = "Posts: ";
 
   posts.forEach((post) => {
-    const postElement = document.createElement("a");
-    postElement.href = `../../post/index.html?id=${post.id}`;
+    const postLink = document.createElement("a");
+    postLink.href = `../../post/index.html?id=${post.id}`;
+
+    const postElement = document.createElement("div");
     postElement.classList.add("post");
+    postElement.classList.add("post-link");
 
     const title = post.title;
     const titleElement = document.createElement("h2");
@@ -33,7 +37,8 @@ export async function renderUserProfile(container, posts) {
     const bodyElement = document.createElement("p");
     bodyElement.textContent = body;
 
-    profilePostsContainer.append(postElement);
+    profilePostsContainer.append(postLink);
+    postLink.append(postElement);
     postElement.append(titleElement, bodyElement);
   });
 

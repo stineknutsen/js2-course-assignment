@@ -4,6 +4,7 @@
   --primary: #21586e;
   --secondary: #d581d9;
   --accent: #ad3466;
+  --hover: #f5fcff;
 }
 :root[data-theme="dark"] {
   --text: #e8f3f8;
@@ -11,4 +12,5 @@
   --primary: #91c8de;
   --secondary: #cb5285;
   --accent: #79267e;
+  --hover: #020b0f;
 }
