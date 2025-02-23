@@ -32,9 +32,8 @@
 
 @media screen and (min-width: 900px) {
   .frontpage {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
+    flex-direction: row;
+    gap: 2rem;
   }
 
   .frontpage-section {
@@ -43,6 +42,6 @@
   }
 
   .frontpage-image {
-    max-width: 100%;
+    max-width: 50%;
   }
 }
